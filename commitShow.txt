@@ -1,58 +1,21 @@
-commit ff21953e329b799a13d4302f681401c4dda539c2
+commit 5cc147af36d98a93e824410dff3bf130b83c3a62
 Author: VivaanBahl <vivaanbahl@paloaltoapps.com>
-Date:   Tue Nov 24 17:00:43 2015 -0500
+Date:   Tue Nov 24 17:06:24 2015 -0500
 
-    GAAAAAH
-    Tested? = NO
-    Approved By = NULL
+    updated to use the thing
+    Tested? = YES
+    Approved By = NONE
 
-diff --git a/.travis.yml b/.travis.yml
-index ff847ce..8f81c33 100644
---- a/.travis.yml
-+++ b/.travis.yml
-@@ -5,4 +5,4 @@ sudo: false # run on travis's container infrastructure
- script:
-     - echo "starting \'build\'"
-     - ls
--    - ./validateCommitMetadata
-+    - ./validateCommitMetadata.sh
-diff --git a/commitShow.txt b/commitShow.txt
-index 3b57a5f..dc376ef 100644
---- a/commitShow.txt
-+++ b/commitShow.txt
-@@ -1 +1,18 @@
--commit show
-+commit 0660d3f604339de06cfe4c392fe25149edbca090
-+Author: VivaanBahl <vivaanbahl@paloaltoapps.com>
-+Date:   Tue Nov 24 16:58:54 2015 -0500
-+
-+    derp
-+    Tested? = NO
-+    Approved By = NULL
-+
-+diff --git a/.travis.yml b/.travis.yml
-+index 2c2849f..ff847ce 100644
-+--- a/.travis.yml
-++++ b/.travis.yml
-+@@ -5,4 +5,4 @@ sudo: false # run on travis's container infrastructure
-+ script:
-+     - echo "starting \'build\'"
-+     - ls
-+-    - validateCommitMetadata
-++    - ./validateCommitMetadata
-diff --git a/status.txt b/status.txt
-index 8be5547..ffa05d6 100644
---- a/status.txt
-+++ b/status.txt
-@@ -1 +1,10 @@
--status
-+On branch master
-+Your branch is up-to-date with 'origin/master'.
-+
-+Changes not staged for commit:
-+  (use "git add <file>..." to update what will be committed)
-+  (use "git checkout -- <file>..." to discard changes in working directory)
-+
-+	modified:   status.txt
-+
-+no changes added to commit (use "git add" and/or "git commit -a")
+diff --git a/validateCommitMetadata.sh b/validateCommitMetadata.sh
+index 6928360..911cf4d 100755
+--- a/validateCommitMetadata.sh
++++ b/validateCommitMetadata.sh
+@@ -39,7 +39,7 @@ else
+     echo "approver is not author"
+ fi
+ 
+-if [ "$authorName" == NULL ]
++if [ "$authorName" == NONE ]
+ then
+   echo "Commit needs to be approved!"
+   exit 1;
