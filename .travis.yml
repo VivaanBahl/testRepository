@@ -4,4 +4,5 @@ sudo: false # run on travis's container infrastructure
 #WARNING: relies on hardcoded numbers for some string processing!
 script:
     - echo "starting \'build\'"
+    - ls
     - validateCommitMetadata
