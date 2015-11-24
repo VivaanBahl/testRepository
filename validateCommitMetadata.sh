@@ -39,7 +39,7 @@ else
     echo "approver is not author"
 fi
 
-if [ "$authorName" == NULL ]
+if [ "$authorName" == NONE ]
 then
   echo "Commit needs to be approved!"
   exit 1;
