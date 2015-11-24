@@ -7,7 +7,7 @@ git status > status.txt
 statusGrep=$(grep "HEAD detached" status.txt)
 echo "statusGrep = $statusGrep"
 
-commitHash=${statusGrep:19}
+commitHash=${statusGrep:17}
 echo $commitHash
 
 git show $commitHash > commitShow.txt
@@ -47,7 +47,11 @@ then
 else
     echo "Good, approver is not author"
 fi
-if (( ($approvedByName = "TrevorDecker") || ($approvedByName = "VivaanBahl") || ($approvedByName = "ihartwig") || ($approvedByName = "msebek") ))
+
+echo $approvedByName
+echo "$approvedByName"
+
+if [[ ("$approvedByName" == "TrevorDecker") || ("$approvedByName" == "VivaanBahl") || ("$approvedByName" == "ihartwig") || ("$approvedByName" == "msebek") ]]
 then
     echo "commit approved by authorized reviewer"
 else
