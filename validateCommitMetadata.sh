@@ -43,7 +43,7 @@ fi
 
 
 echo "Checking approval name against approved reviewer list"
-if [ "$authorName" == "$approvedByName" ]
+if [ $authorName = $approvedByName ]
 then
   echo "Can't have author be the approver!"
   exit 1;

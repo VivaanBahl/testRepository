@@ -1,21 +1,20 @@
-commit 5cc147af36d98a93e824410dff3bf130b83c3a62
+commit 24f24e07ad4df2ec1fdedb627c40d2efd5fc23d3
 Author: VivaanBahl <vivaanbahl@paloaltoapps.com>
-Date:   Tue Nov 24 17:06:24 2015 -0500
+Date:   Tue Nov 24 17:33:47 2015 -0500
 
-    updated to use the thing
+    asldjf
     Tested? = YES
-    Approved By = NONE
+    Approved By = VivaanBahl
 
 diff --git a/validateCommitMetadata.sh b/validateCommitMetadata.sh
-index 6928360..911cf4d 100755
+index 377fc2a..e138c5a 100755
 --- a/validateCommitMetadata.sh
 +++ b/validateCommitMetadata.sh
-@@ -39,7 +39,7 @@ else
-     echo "approver is not author"
- fi
+@@ -23,6 +23,7 @@ authorName=${author%<*>}
+ approvedByName=${approvedBy:18}
  
--if [ "$authorName" == NULL ]
-+if [ "$authorName" == NONE ]
- then
-   echo "Commit needs to be approved!"
-   exit 1;
+ echo $authorName
++echo $approvedByName
+ 
+ echo "Checking status of test"
+ if [ "$testedStatus" != YES ]
