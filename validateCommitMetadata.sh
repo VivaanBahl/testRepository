@@ -7,7 +7,7 @@ git status > status.txt
 statusGrep=$(grep "HEAD detached" status.txt)
 echo "statusGrep = $statusGrep"
 
-commitHash=${statusGrep:17}
+commitHash=${statusGrep:19}
 echo $commitHash
 
 git show $commitHash > commitShow.txt
