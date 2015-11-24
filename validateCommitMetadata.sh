@@ -22,9 +22,6 @@ author=${author:8}
 authorName=${author%<*>}
 approvedByName=${approvedBy:18}
 
-echo $authorName
-echo $approvedByName
-
 echo "Checking status of test"
 if [ "$testedStatus" != YES ]
 then
