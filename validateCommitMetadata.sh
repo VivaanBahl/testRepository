@@ -47,7 +47,7 @@ then
 else
     echo "Good, approver is not author"
 fi
-if (( ("$approvedByName" == "TrevorDecker") || ("$approvedByName" == "VivaanBahl") || ("$approvedByName" == "ihartwig") || ("$approvedByName" == "msebek") ))
+if (( ($approvedByName = "TrevorDecker") || ($approvedByName = "VivaanBahl") || ($approvedByName = "ihartwig") || ($approvedByName = "msebek") ))
 then
     echo "commit approved by authorized reviewer"
 else

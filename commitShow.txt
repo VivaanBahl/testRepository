@@ -1,20 +1,16 @@
-commit 24f24e07ad4df2ec1fdedb627c40d2efd5fc23d3
+commit 8fa5d84d0f4e5cadfc37b280279cd927cc33468d
 Author: VivaanBahl <vivaanbahl@paloaltoapps.com>
-Date:   Tue Nov 24 17:33:47 2015 -0500
+Date:   Tue Nov 24 17:44:34 2015 -0500
 
-    asldjf
+    ben
     Tested? = YES
-    Approved By = VivaanBahl
+    Approved By = blandis
 
-diff --git a/validateCommitMetadata.sh b/validateCommitMetadata.sh
-index 377fc2a..e138c5a 100755
---- a/validateCommitMetadata.sh
-+++ b/validateCommitMetadata.sh
-@@ -23,6 +23,7 @@ authorName=${author%<*>}
- approvedByName=${approvedBy:18}
- 
- echo $authorName
-+echo $approvedByName
- 
- echo "Checking status of test"
- if [ "$testedStatus" != YES ]
+diff --git a/README.txt b/README.txt
+index 7153ebf..451f808 100644
+--- a/README.txt
++++ b/README.txt
+@@ -1,2 +1,2 @@
+ my repository for my Git experiments
+-checking ian
++checking ben
