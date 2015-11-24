@@ -1,6 +1,7 @@
 #!/bin/bash
 
-echo "starting \'build\'"
+echo "starting commit validation"
+echo "the build passed, checking whether it's safe to merge"
 
 git status > status.txt
 statusGrep=$(grep "HEAD detached" status.txt)
@@ -30,20 +31,22 @@ else
   echo "Has been tested!"
 fi
 
+echo "Checking approval existence"
+if [ "$approvedByName" == "NONE" ]
+then
+  echo "Commit needs to be approved!"
+  exit 1;
+fi
+
 echo "Checking approval"
 if [ "$authorName" == "$approvedByName" ]
 then
   echo "Can't have author be the approver!"
   exit 1;
 else
-    echo "approver is not author"
+    echo "Good, approver is not author"
 fi
 
-if [ "$approvedByName" == "NONE" ]
-then
-  echo "Commit needs to be approved!"
-  exit 1;
-else
-  echo "all meta checks passed!"
-  exit 0;
-fi
+echo "All validation checks passed!"
+echo "This commit is now allowed to be merged into master!"
+
