@@ -1,1 +1,18 @@
-commit show
+commit 0660d3f604339de06cfe4c392fe25149edbca090
+Author: VivaanBahl <vivaanbahl@paloaltoapps.com>
+Date:   Tue Nov 24 16:58:54 2015 -0500
+
+    derp
+    Tested? = NO
+    Approved By = NULL
+
+diff --git a/.travis.yml b/.travis.yml
+index 2c2849f..ff847ce 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -5,4 +5,4 @@ sudo: false # run on travis's container infrastructure
+ script:
+     - echo "starting \'build\'"
+     - ls
+-    - validateCommitMetadata
++    - ./validateCommitMetadata

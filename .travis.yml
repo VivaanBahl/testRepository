@@ -5,4 +5,4 @@ sudo: false # run on travis's container infrastructure
 script:
     - echo "starting \'build\'"
     - ls
-    - ./validateCommitMetadata
+    - ./validateCommitMetadata.sh
