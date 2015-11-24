@@ -1,0 +1,6 @@
+language: sh
+sudo: false # run on travis's container infrastructure
+
+script:
+    - echo "starting \'build\'"
+    - git status
