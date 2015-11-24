@@ -31,20 +31,28 @@ else
   echo "Has been tested!"
 fi
 
-echo "Checking approval existence"
+echo "Checking approval validity"
 if [ "$approvedByName" == "NONE" ]
 then
-  echo "Commit needs to be approved!"
+  echo "Commit needs to be approved by someone!"
   exit 1;
 fi
 
-echo "Checking approval"
+
+echo "Checking approval name against approved reviewer list"
 if [ "$authorName" == "$approvedByName" ]
 then
   echo "Can't have author be the approver!"
   exit 1;
 else
     echo "Good, approver is not author"
+fi
+if (( ("$approvedByName" == "TrevorDecker") || ("$approvedByName" == "VivaanBahl") || ("$approvedByName" == "ihartwig") || ("$approvedByName" == "msebek") ))
+then
+    echo "commit approved by authorized reviewer"
+else
+    echo "unknown/misspelled or unauthorized reviewer"
+    exit 1
 fi
 
 echo "All validation checks passed!"
