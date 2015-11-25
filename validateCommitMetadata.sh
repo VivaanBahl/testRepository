@@ -5,10 +5,15 @@ echo "the build passed, checking whether it's safe to merge"
 
 git status > status.txt
 statusGrep=$(grep "HEAD detached" status.txt)
-echo "statusGrep = $statusGrep"
 
 commitHash=${statusGrep:19}
-echo $commitHash
+echo "Attempting to use commit $commitHash"
+
+if [ "$commitHash" = "FETCH_HEAD" ]
+then
+    echo "Invalid test, skipping for now until we can figure out what's going on"
+    exit 0;
+fi
 
 git show $commitHash > commitShow.txt
 
