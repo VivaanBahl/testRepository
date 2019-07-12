@@ -1,3 +1,4 @@
+wut
 HEAD detached at 89ad9f6
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
